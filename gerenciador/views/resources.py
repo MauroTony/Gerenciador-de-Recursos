@@ -109,7 +109,7 @@ class ResourceScheduleView(APIView):
             return Response(
                 {"msg": "Resource successfully deleted"}, status=status.HTTP_200_OK
             )
-        except Resources.DoesNotExist:
+        except ResourceScheduling.DoesNotExist:
             return Response(
-                {"msg": "Resource not found"}, status=status.HTTP_404_NOT_FOUND
+                {"msg": "Resource Scheduling not found"}, status=status.HTTP_404_NOT_FOUND
             )
