@@ -20,7 +20,7 @@ Projeto está utilizando Docker, para iniciar siga os passos abaixos.
 Realize o git clone
 
 ```sh
-git clone git@github.com:MauroTony/Gerenciador-de-Recursos.git
+git clone https://github.com/MauroTony/Gerenciador-de-Recursos.git
 ```
 Realizando o Build do docker
 ```sh
