@@ -41,3 +41,20 @@ class PasswordChangeSerializer(serializers.Serializer):
         if not self.context['request'].user.check_password(value):
             raise serializers.ValidationError({'current_password': 'Does not match'})
         return value
+
+
+class DeleteUserSerializer(serializers.Serializer):
+    username = serializers.CharField(required=True)
+
+    def validate_username(self, value):
+        if value == self.context['request'].user.username:
+            raise serializers.ValidationError({'msg': 'You cannot delete yourself'})
+        return value
+
+    def delete_user(self):
+        try:
+            user = get_user_model().objects.get(username=self.validated_data['username'])
+        except get_user_model().DoesNotExist:
+            raise serializers.ValidationError({'msg': 'User does not exist'})
+        user.delete()
+        return user
