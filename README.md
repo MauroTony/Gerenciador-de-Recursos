@@ -39,12 +39,16 @@ Criando usuario administrador com username "admin"
 ```sh
 docker-compose exec web python manage.py createsuperuser --username=admin
 ```
+Neste ponto a aplicação já deve estar rodando acesse http://0.0.0.0:8000/
+
+
+
 Desligando Servidor
 ```sh
 docker-compose down
 ```
 
-Neste ponto a aplicação já deve estar rodando acesse http://0.0.0.0:8000/
+
 
 Documentação da API do projeto encontra-se no link abaixo:
 https://documenter.getpostman.com/view/19154738/VUxLvoAX#46442eb8-74a3-4488-b4ab-ec236bc19deb
