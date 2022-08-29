@@ -1,28 +1,20 @@
-import datetime
-
 from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
-from django.contrib.auth.models import (
-    BaseUserManager, AbstractBaseUser
-)
-from django.utils import timezone
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+
+
 class UserManager(BaseUserManager):
     def create_user(self, username, password):
         if not username:
-            raise ValueError('Users must have an username')
+            raise ValueError("Users must have an username")
 
-        user = self.model(
-            username=username
-        )
+        user = self.model(username=username)
         user.set_password(password)
         user.save(using=self._db)
         return user
 
     def create_superuser(self, username, password):
-        user = self.create_user(
-            username,
-            password=password
-        )
+        user = self.create_user(username, password=password)
         user.is_admin = True
         user.save(using=self._db)
         return user
@@ -35,7 +27,7 @@ class Users(AbstractBaseUser):
     is_admin = models.BooleanField(default=False)
     objects = UserManager()
 
-    USERNAME_FIELD = 'username'
+    USERNAME_FIELD = "username"
 
     def __str__(self):
         return self.username
@@ -43,7 +35,6 @@ class Users(AbstractBaseUser):
     @property
     def is_staff(self):
         return self.is_admin
-
 
     class Meta:
         db_table = "users"
