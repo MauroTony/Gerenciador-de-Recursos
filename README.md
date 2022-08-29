@@ -39,7 +39,10 @@ Criando usuario administrador com username "admin"
 ```sh
 docker-compose exec web python manage.py createsuperuser --username=admin
 ```
-Neste ponto a aplicação já deve estar rodando acesse http://127.0.0.1:8000
+Neste ponto a aplicação já deve estar rodando, acesse http://127.0.0.1:8000.
+
+Se após acessar o link acima a pagina retornar conforme o print abaixo, então está funcionando e pode seguir para a documentação para consumir os endpoints:
+![image](https://user-images.githubusercontent.com/57079165/187264038-d398b264-7433-4d92-a217-ca19863467dd.png)
 
 
 
