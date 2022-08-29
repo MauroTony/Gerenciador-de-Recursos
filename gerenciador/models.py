@@ -51,7 +51,7 @@ class Users(AbstractBaseUser):
 
 class Resources(models.Model):
     id = models.AutoField(primary_key=True)
-    description = models.IntegerField(unique=True)
+    description = models.CharField(max_length=100, unique=True)
     available = models.BooleanField(default=True)
 
     class Meta:
@@ -64,6 +64,7 @@ class ResourceScheduling(models.Model):
     initial_date = models.DateTimeField()
     final_date = models.DateTimeField()
     user = models.ForeignKey(Users, on_delete=models.DO_NOTHING)
+    is_deleted = models.BooleanField(default=False)
 
     class Meta:
         db_table = "resource_scheduling"
