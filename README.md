@@ -56,5 +56,5 @@ docker-compose down
 Documentação da API do projeto encontra-se no link abaixo:
 https://documenter.getpostman.com/view/19154738/VUxLvoAX#46442eb8-74a3-4488-b4ab-ec236bc19deb
 
-Collection do Postman para teste das requisões:
+Collection do Postman para teste das requisões (Possivel acessar a documentação pela propria collection no postman):
 [Mesha.postman_collection.zip](https://github.com/MauroTony/Gerenciador-de-Recursos/files/9446541/Mesha.postman_collection.zip)
